@@ -97,7 +97,7 @@ mais constante. </p>
       </a>
     </td>
     <td align="center">
-      <a href="https://github.com/Gabrielx47" target="_blank">
+      <a href="https://github.com/TSjadness" target="_blank">
         <img style="border-radius:8px;" src="https://avatars.githubusercontent.com/u/95153192?v=4"  width="100px;" alt="Foto de JADSON TAVARES"/><br>
         <sub>
           <b>JADSON TAVARES</b><br><br>
@@ -106,7 +106,7 @@ mais constante. </p>
       </a>
     </td>
     <td align="center">
-      <a href="https://github.com/viniVN7" target="_blank">
+      <a href="https://github.com/Luan-S4ntana" target="_blank">
         <img style="border-radius:8px;" src="https://avatars.githubusercontent.com/u/95152434?v=4" target="_blank"  width="100px;" alt="Foto de LUAN GUSTAVO"/><br>
         <sub>
           <b>LUAN GUSTAVO</b><br><br>
@@ -115,7 +115,7 @@ mais constante. </p>
       </a>
     </td>
     <td align="center" >
-      <a href="https://github.com/lauro-ss" target="_blank">
+      <a href="https://github.com/vitorolive99" target="_blank">
         <img style="border-radius:8px;" src="https://avatars.githubusercontent.com/u/85531375?v=4" target="_blank"  width="100px;" alt="Foto de VITOR OLIVEIRA"/><br>
         <sub>
           <b>VITOR OLIVEIRA</b><br><br>
