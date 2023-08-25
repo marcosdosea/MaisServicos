@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\REPO_GIT\\MaisServicos\\Codigo\\MaisServicos\\MaisServicosWeb\\MaisServicosWeb.csproj": {}
+    "D:\\REPO_GIT\\MaisServicos\\Codigo\\MaisServicos\\Service\\Service.csproj": {}
   },
   "projects": {
-    "D:\\REPO_GIT\\MaisServicos\\Codigo\\MaisServicos\\MaisServicosWeb\\MaisServicosWeb.csproj": {
+    "D:\\REPO_GIT\\MaisServicos\\Codigo\\MaisServicos\\Service\\Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\REPO_GIT\\MaisServicos\\Codigo\\MaisServicos\\MaisServicosWeb\\MaisServicosWeb.csproj",
-        "projectName": "MaisServicosWeb",
-        "projectPath": "D:\\REPO_GIT\\MaisServicos\\Codigo\\MaisServicos\\MaisServicosWeb\\MaisServicosWeb.csproj",
+        "projectUniqueName": "D:\\REPO_GIT\\MaisServicos\\Codigo\\MaisServicos\\Service\\Service.csproj",
+        "projectName": "Service",
+        "projectPath": "D:\\REPO_GIT\\MaisServicos\\Codigo\\MaisServicos\\Service\\Service.csproj",
         "packagesPath": "C:\\Users\\Caio\\.nuget\\packages\\",
-        "outputPath": "D:\\REPO_GIT\\MaisServicos\\Codigo\\MaisServicos\\MaisServicosWeb\\obj\\",
+        "outputPath": "D:\\REPO_GIT\\MaisServicos\\Codigo\\MaisServicos\\Service\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Caio\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,12 +39,6 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "dependencies": {
-            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
-              "target": "Package",
-              "version": "[12.0.1, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
@@ -57,9 +51,6 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }

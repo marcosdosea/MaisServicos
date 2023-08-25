@@ -1,8 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "XfoX9+R+T6XzEPIk0Gth6ZqKnV4JblneaXujNoc0IxfNLH/sO2xnNEpVuGX4s6GI70qENFlnifsfFRDF3QQpgA==",
+  "dgSpecHash": "xtQJ0YjmlTeuTB2Bj5KaxYUTxfh/7WYwRfuf5GV3FBVT0hVC075ET3tbQXb8OzGpCK6tJbKcp+YJE6iAuVDj1Q==",
   "success": true,
   "projectFilePath": "D:\\REPO_GIT\\MaisServicos\\Codigo\\MaisServicos\\MaisServicosWeb\\MaisServicosWeb.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Caio\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\Caio\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
+    "C:\\Users\\Caio\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\Caio\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\Caio\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
+    "C:\\Users\\Caio\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
+    "C:\\Users\\Caio\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
