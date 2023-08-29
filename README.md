@@ -1,7 +1,7 @@
 <!-- ## MaisServicos -->
 
 <div align="center">
-<img src="./Requisitos/UI/Logo_MaisServiços.png" width="60%"><br><br>
+<img src="./Requisitos/UI/Tela_Logo.png" width="60%"><br><br>
 
 <p>A plataforma que conecta clientes e prestadores de serviços, simplificando a busca por profissionais qualificados.</p> 
 </div>
