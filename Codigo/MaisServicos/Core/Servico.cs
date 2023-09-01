@@ -7,7 +7,7 @@ public partial class Servico
 {
     public int Id { get; set; }
 
-    public DateTime Nome { get; set; }
+    public string Nome { get; set; } = null!;
 
     public string Descricao { get; set; } = null!;
 
@@ -15,7 +15,5 @@ public partial class Servico
 
     public virtual Areadeatuacao IdAreaDeAtuacaoNavigation { get; set; } = null!;
 
-    public virtual ICollection<Servicocontratado> IdServicoContratados { get; set; } = new List<Servicocontratado>();
-
-    public virtual ICollection<Usuario> IdUsuarios { get; set; } = new List<Usuario>();
+    public virtual ICollection<Servicocontratado> Ids { get; set; } = new List<Servicocontratado>();
 }

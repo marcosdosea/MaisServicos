@@ -11,13 +11,11 @@ public partial class Orcamento
 
     public string Descricao { get; set; } = null!;
 
+    public DateTime Data { get; set; }
+
     public int IdSolicita { get; set; }
 
-    public int IdUsuario { get; set; }
-
-    public virtual Solicitum IdSolicitaNavigation { get; set; } = null!;
-
-    public virtual Usuario IdUsuarioNavigation { get; set; } = null!;
+    public virtual Solicitarorcamento IdSolicitaNavigation { get; set; } = null!;
 
     public virtual ICollection<Servicocontratado> Servicocontratados { get; set; } = new List<Servicocontratado>();
 }

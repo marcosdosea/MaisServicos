@@ -9,23 +9,21 @@ public partial class Servicocontratado
 
     public float Valor { get; set; }
 
-    public int IdCliente { get; set; }
+    public int IdPessoa { get; set; }
+
+    public int IdAvaliacao { get; set; }
 
     public int IdTemplateContrato { get; set; }
 
-    public int IdOrçamento { get; set; }
+    public int IdOrcamento { get; set; }
 
-    public int IdUsuario { get; set; }
+    public virtual Avaliacao IdAvaliacaoNavigation { get; set; } = null!;
 
-    public virtual ICollection<Avaliacao> Avaliacaos { get; set; } = new List<Avaliacao>();
+    public virtual Orcamento IdOrcamentoNavigation { get; set; } = null!;
 
-    public virtual Orcamento IdOrçamentoNavigation { get; set; } = null!;
+    public virtual Pessoa IdPessoaNavigation { get; set; } = null!;
 
     public virtual Templatecontrato IdTemplateContratoNavigation { get; set; } = null!;
-
-    public virtual Usuario IdUsuarioNavigation { get; set; } = null!;
-
-    public virtual ICollection<Areadeatuacao> IdAreaDeAtuacaos { get; set; } = new List<Areadeatuacao>();
 
     public virtual ICollection<Servico> IdServicos { get; set; } = new List<Servico>();
 }

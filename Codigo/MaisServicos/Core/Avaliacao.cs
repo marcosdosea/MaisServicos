@@ -7,17 +7,15 @@ public partial class Avaliacao
 {
     public int Id { get; set; }
 
-    public DateTime DataAvaliacao { get; set; }
+    public DateTime Data { get; set; }
 
-    public string NotaAvaliacao { get; set; } = null!;
+    public string Nota { get; set; } = null!;
 
     public string Descricao { get; set; } = null!;
 
-    public int IdUsuario { get; set; }
+    public int IdPessoa { get; set; }
 
-    public int IdServicoContratado { get; set; }
+    public virtual Pessoa IdPessoaNavigation { get; set; } = null!;
 
-    public virtual Servicocontratado IdServicoContratadoNavigation { get; set; } = null!;
-
-    public virtual Usuario IdUsuarioNavigation { get; set; } = null!;
+    public virtual ICollection<Servicocontratado> Servicocontratados { get; set; } = new List<Servicocontratado>();
 }

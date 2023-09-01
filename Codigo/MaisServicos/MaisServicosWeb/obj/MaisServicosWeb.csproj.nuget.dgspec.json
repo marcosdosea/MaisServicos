@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\REPO_GIT\\MaisServicos\\Codigo\\MaisServicos\\MaisServicosWeb\\MaisServicosWeb.csproj": {}
+    "D:\\+serviços\\MaisServicos\\Codigo\\MaisServicos\\MaisServicosWeb\\MaisServicosWeb.csproj": {}
   },
   "projects": {
-    "D:\\REPO_GIT\\MaisServicos\\Codigo\\MaisServicos\\MaisServicosWeb\\MaisServicosWeb.csproj": {
+    "D:\\+serviços\\MaisServicos\\Codigo\\MaisServicos\\MaisServicosWeb\\MaisServicosWeb.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\REPO_GIT\\MaisServicos\\Codigo\\MaisServicos\\MaisServicosWeb\\MaisServicosWeb.csproj",
+        "projectUniqueName": "D:\\+serviços\\MaisServicos\\Codigo\\MaisServicos\\MaisServicosWeb\\MaisServicosWeb.csproj",
         "projectName": "MaisServicosWeb",
-        "projectPath": "D:\\REPO_GIT\\MaisServicos\\Codigo\\MaisServicos\\MaisServicosWeb\\MaisServicosWeb.csproj",
-        "packagesPath": "C:\\Users\\Caio\\.nuget\\packages\\",
-        "outputPath": "D:\\REPO_GIT\\MaisServicos\\Codigo\\MaisServicos\\MaisServicosWeb\\obj\\",
+        "projectPath": "D:\\+serviços\\MaisServicos\\Codigo\\MaisServicos\\MaisServicosWeb\\MaisServicosWeb.csproj",
+        "packagesPath": "C:\\Users\\202000008183\\.nuget\\packages\\",
+        "outputPath": "D:\\+serviços\\MaisServicos\\Codigo\\MaisServicos\\MaisServicosWeb\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Caio\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\202000008183\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -64,7 +64,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }
