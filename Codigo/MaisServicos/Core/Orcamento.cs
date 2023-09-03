@@ -17,5 +17,5 @@ public partial class Orcamento
 
     public virtual Solicitarorcamento IdSolicitaNavigation { get; set; } = null!;
 
-    public virtual ICollection<Servicocontratado> Servicocontratados { get; set; } = new List<Servicocontratado>();
+    public virtual ICollection<Orcamento> Orcamentos { get; set; } = new List<Orcamento>();
 }
