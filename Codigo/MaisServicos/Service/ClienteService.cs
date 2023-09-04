@@ -19,7 +19,7 @@ namespace Service
         /// </summary>
         /// <param name="client"></param>
         /// <returns>id do cliente</returns>
-        public int Create(Cliente client)
+        public int Create(Pessoa client)
         {
             _context.Add(client);
             _context.SaveChanges();
@@ -41,7 +41,7 @@ namespace Service
         /// Editar os dados de um cliente na base de dados
         /// </summary>
         /// <param name="client"></param>
-        public void Edit(Cliente client)
+        public void Edit(Pessoa client)
         {
             _context.Update(client);
             _context.SaveChanges();
@@ -52,18 +52,18 @@ namespace Service
         /// </summary>
         /// <param name="idClient"></param>
         /// <returns>Dados do cliente</returns>
-        public Cliente Get(int idClient)
+        public Pessoa Get(int idClient)
         {
-            return (Cliente)_context.Pessoas.Find(idClient);
+            return _context.Pessoas.Find(idClient);
         }
 
         /// <summary>
         /// Buscar todos os clientes cadastrados
         /// </summary>
         /// <returns>Lista de clientes</returns>
-        public IEnumerable<Cliente> GetAll()
+        public IEnumerable<Pessoa> GetAll()
         {
-            return (IEnumerable<Cliente>)_context.Pessoas.AsNoTracking();
+            return (IEnumerable<Pessoa>)_context.Pessoas.AsNoTracking();
         }
 
         /// <summary>
@@ -71,12 +71,12 @@ namespace Service
         /// </summary>
         /// <param name="nome">nome do cliente</param>
         /// <returns>Lista de clientes que inicia com o nome</returns>
-        IEnumerable<ClienteDTO> IClienteService.GetByName(string nome)
+        IEnumerable<PessoaDTO> IClienteService.GetByName(string nome)
         {
             var query = from client in _context.Pessoas
                         where client.Nome.StartsWith(nome)
                         orderby client.Nome
-                        select new ClienteDTO
+                        select new PessoaDTO
                         {
                             Id = client.Id,
                             Nome = client.Nome

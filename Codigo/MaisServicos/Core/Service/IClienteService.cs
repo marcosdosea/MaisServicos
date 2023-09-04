@@ -1,4 +1,5 @@
 ﻿using Core.DTO;
+using MySqlX.XDevAPI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,11 +10,11 @@ namespace Core.Service
 {
     public interface IClienteService 
     {
-        int Create(Cliente pessoa);
-        void Edit(Cliente pessoa);
+        int Create(Pessoa pessoa);
+        void Edit(Pessoa pessoa);
         void Delete(int idPessoa);
-        Cliente Get(int idPessoa);
-        IEnumerable<Cliente> GetAll();
-        IEnumerable<ClienteDTO> GetByName(String nome);
+        Pessoa Get(int idPessoa);
+        IEnumerable<Pessoa> GetAll();
+        IEnumerable<PessoaDTO> GetByName(String nome);
     }
 }

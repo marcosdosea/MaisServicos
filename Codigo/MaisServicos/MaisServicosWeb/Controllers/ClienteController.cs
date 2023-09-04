@@ -29,7 +29,7 @@ namespace MaisServicosWeb.Controllers
         // GET: ClienteController/Details/5
         public ActionResult Details(int id)
         {
-            Cliente client = (Cliente)_clienteService.Get(id);
+            Pessoa client = _clienteService.Get(id);
             ClienteViewModel clienteViewModel = _mapper.Map<ClienteViewModel>(client);
             return View(clienteViewModel);
         }
@@ -47,7 +47,7 @@ namespace MaisServicosWeb.Controllers
         {
             if (ModelState.IsValid)
             {
-                var client = _mapper.Map<Cliente>(clienteViewModel);
+                var client = _mapper.Map<Pessoa>(clienteViewModel);
                 _clienteService.Create(client);
             }
             return RedirectToAction(nameof(Index));
@@ -56,7 +56,7 @@ namespace MaisServicosWeb.Controllers
         // GET: ClienteController/Edit/5
         public ActionResult Edit(int id)
         {
-            Cliente client = (Cliente)_clienteService.Get(id);
+            Pessoa client = _clienteService.Get(id);
             ClienteViewModel clienteViewModel = _mapper.Map<ClienteViewModel>(client);
             return View(clienteViewModel);
         }
@@ -68,7 +68,7 @@ namespace MaisServicosWeb.Controllers
         {
             if (ModelState.IsValid)
             {
-                var client = _mapper.Map<Cliente>(clienteViewModel);
+                var client = _mapper.Map<Pessoa>(clienteViewModel);
                 _clienteService.Edit(client);
             }
             return RedirectToAction(nameof(Index));
@@ -77,7 +77,7 @@ namespace MaisServicosWeb.Controllers
         // GET: ClienteController/Delete/5
         public ActionResult Delete(int id)
         {
-            Cliente client = (Cliente)_clienteService.Get(id);
+            Pessoa client = _clienteService.Get(id);
             ClienteViewModel clienteViewModel = _mapper.Map<ClienteViewModel>(client);
             return View(clienteViewModel);
         }
