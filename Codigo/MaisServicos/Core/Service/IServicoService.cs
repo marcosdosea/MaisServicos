@@ -8,16 +8,16 @@ namespace Core.Service
 {
     public interface IServicoService
     {
-        public int Inserir(Servico servico);
+        public int Create(Servico servico);
 
-        public Servico Obter(int idServico);
+        public void Edit(Servico servico);
 
-        public void Alterar(Servico servico);
+        public void Delete(int idServico);
 
-        public void Excluir(int idServico);
+        public Servico Get(int idServico);
 
-        public IEnumerable<Servico> ConsultarTodos();
+        public IEnumerable<Servico> GetAll();
 
-        public IEnumerable<Servico> ConsultarPeloNome(string nome);
+        public IEnumerable<Servico> GetByName(string nome);
     }
 }
