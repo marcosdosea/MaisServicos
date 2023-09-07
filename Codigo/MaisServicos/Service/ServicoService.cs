@@ -23,7 +23,7 @@ namespace Service
         ///</sumary>
         ///<param name="serviço">dados do serviço</param>
         ///<returns>id</returns>
-        public int Inserir(Servico servico)
+        public int Create(Servico servico)
         {
             _context.Add(servico);
             _context.SaveChanges();
@@ -34,7 +34,7 @@ namespace Service
         ///Alterar dados do serviço na base de dados
         ///</sumary>
         ///<param name="servico"></param>
-        public void Alterar(Servico servico)
+        public void Edit(Servico servico)
         {
             _context.Update(servico);
             _context.SaveChanges();
@@ -44,7 +44,7 @@ namespace Service
         ///Remove o serviço da base de dados
         ///</sumary>
         ///<param name="Id">id do serviço</param>
-        public void Excluir(int idServico)
+        public void Delete(int idServico)
         {
             var _servico = _context.Servicos.Find(idServico);
             _context.Remove(_servico);
@@ -56,7 +56,7 @@ namespace Service
 		/// </summary>
 		/// <param name="idServico">id serviço</param>
 		/// <returns>dados do autor</returns>
-        public Servico Obter(int idServico)
+        public Servico Get(int idServico)
         {
             return _context.Servicos.Find(idServico);
         }
@@ -65,7 +65,7 @@ namespace Service
         ///Buscar todos os serviços cadastrados
         /// </sumary>
         /// <returns>Lista de serviços</returns>
-        public IEnumerable<Servico> ConsultarTodos()
+        public IEnumerable<Servico> GetAll()
         {
             return _context.Servicos.AsNoTracking();
         }
@@ -75,7 +75,7 @@ namespace Service
         /// </sumary>
         /// <param name="nome">nome do serviço</param>
         /// <returns>Lista de serviços que inicia com o nome</returns>
-        public IEnumerable<Servico> ConsultarPeloNome(string nome)
+        public IEnumerable<Servico> GetByName(string nome)
         {
             var query = from servico in _context.Servicos
                         where servico.Nome.StartsWith(nome)
