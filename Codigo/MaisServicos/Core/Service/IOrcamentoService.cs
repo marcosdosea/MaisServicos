@@ -8,15 +8,15 @@ namespace Core.OrcamentoService
 {
     public interface IOrcamentoService
     {
-        int InserirOrcamento(Orcamento orcamento);
+        int Create(Orcamento orcamento);
 
-        void AlterarOrcamento(Orcamento orcamento);
+        void Edit(Orcamento orcamento);
 
-        void ExcluirOrcamento(int idOrcamento);
+        void Delete(int idOrcamento);
 
-        public Orcamento BuscarOrcamento(int idOrcamento);
+        Orcamento Get(int idOrcamento);
 
-        public IEnumerable<Orcamento> ConsultarTodos();
+        public IEnumerable<Orcamento> GetAll();
 
     }
 }

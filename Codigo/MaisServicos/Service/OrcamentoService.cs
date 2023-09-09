@@ -17,31 +17,31 @@ namespace Service
         {
             _context = context;
         }
-        public void AlterarOrcamento(Orcamento orcamento)
+        public void Edit(Orcamento orcamento)
         {
             _context.Update(orcamento);
             _context.SaveChanges();
         }
 
-        public Orcamento BuscarOrcamento(int idOrcamento)
+        public Orcamento Get(int idOrcamento)
         {
             return _context.Orcamentos.Find(idOrcamento);
         }
 
-        public void ExcluirOrcamento(int idOrcamento)
+        public void Delete(int idOrcamento)
         {
             var _orcamento = _context.Orcamentos.Find(idOrcamento);
             _context.Remove(_orcamento);
             _context.SaveChanges();
         }
 
-        public int InserirOrcamento(Orcamento orcamento)
+        public int Create(Orcamento orcamento)
         {
             _context.Add(orcamento);
             _context.SaveChanges();
             return orcamento.Id;
         }
-        public IEnumerable<Orcamento> ConsultarTodos()
+        public IEnumerable<Orcamento> GetAll()
         {
             return _context.Orcamentos.AsNoTracking();
         }

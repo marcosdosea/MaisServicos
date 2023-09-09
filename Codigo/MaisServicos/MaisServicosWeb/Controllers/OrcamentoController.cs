@@ -2,7 +2,6 @@
 using Core;
 using Core.OrcamentoService;
 using MaisServicosWeb.Models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MaisServicosWeb.Controllers
@@ -21,16 +20,16 @@ namespace MaisServicosWeb.Controllers
         // GET: OrcamentoController
         public ActionResult Index()
         {
-            var listaOrcamentos = _orcamentoService.ConsultarTodos();
-            var listaOrcamentosModels = _mapper.Map<List<OrcamentoModel>>(listaOrcamentos);
+            var listaOrcamentos = _orcamentoService.GetAll();
+            var listaOrcamentosModels = _mapper.Map<List<OrcamentoViewModel>>(listaOrcamentos);
             return View(listaOrcamentosModels);
         }
 
         // GET: OrcamentoController/Details/5
         public ActionResult Details(int id)
         {
-            Orcamento orcamento = _orcamentoService.BuscarOrcamento(id);
-            OrcamentoModel orcamentoModel = _mapper.Map<OrcamentoModel>(orcamento);
+            Orcamento orcamento = _orcamentoService.Get(id);
+            OrcamentoViewModel orcamentoModel = _mapper.Map<OrcamentoViewModel>(orcamento);
             return View(orcamentoModel);
         }
 
@@ -43,12 +42,12 @@ namespace MaisServicosWeb.Controllers
         // POST: OrcamentoController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(OrcamentoModel orcamentoModel)
+        public ActionResult Create(OrcamentoViewModel orcamentoModel)
         {
             if (ModelState.IsValid)
             {
                 var orcamento = _mapper.Map<Orcamento>(orcamentoModel);
-                _orcamentoService.InserirOrcamento(orcamento);
+                _orcamentoService.Create(orcamento);
             }
             return RedirectToAction(nameof(Index));
         }
@@ -56,20 +55,20 @@ namespace MaisServicosWeb.Controllers
         // GET: OrcamentoController/Edit/5
         public ActionResult Edit(int id)
         {
-            Orcamento orcamento = _orcamentoService.BuscarOrcamento(id);
-            OrcamentoModel orcamentoModel = _mapper.Map<OrcamentoModel>(orcamento);
+            Orcamento orcamento = _orcamentoService.Get(id);
+            OrcamentoViewModel orcamentoModel = _mapper.Map<OrcamentoViewModel>(orcamento);
             return View(orcamentoModel);
         }
 
         // POST: OrcamentoController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, OrcamentoModel orcamentoModel)
+        public ActionResult Edit(int id, OrcamentoViewModel orcamentoModel)
         {
             if (ModelState.IsValid)
             {
                 var orcamento = _mapper.Map<Orcamento>(orcamentoModel);
-                _orcamentoService.AlterarOrcamento(orcamento);
+                _orcamentoService.Edit(orcamento);
             }
             return RedirectToAction(nameof(Index));
         }
@@ -77,17 +76,17 @@ namespace MaisServicosWeb.Controllers
         // GET: OrcamentoController/Delete/5
         public ActionResult Delete(int id)
         {
-            Orcamento orcamento = _orcamentoService.BuscarOrcamento(id);
-            OrcamentoModel orcamentoModel = _mapper.Map<OrcamentoModel>(orcamento);
+            Orcamento orcamento = _orcamentoService.Get(id);
+            OrcamentoViewModel orcamentoModel = _mapper.Map<OrcamentoViewModel>(orcamento);
             return View(orcamentoModel);
         }
 
         // POST: OrcamentoController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, OrcamentoModel orcamentoModel)
+        public ActionResult Delete(int id, OrcamentoViewModel orcamentoModel)
         {
-            _orcamentoService.ExcluirOrcamento(id);
+            _orcamentoService.Delete(id);
             return RedirectToAction(nameof(Index));
         }
     }

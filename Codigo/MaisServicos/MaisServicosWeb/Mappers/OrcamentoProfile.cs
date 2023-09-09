@@ -8,7 +8,7 @@ namespace MaisServicosWeb.Mappers
     {
         public OrcamentoProfile()
         {
-            CreateMap<OrcamentoModel, Orcamento>().ReverseMap();
+            CreateMap<OrcamentoViewModel, Orcamento>().ReverseMap();
         }
     }
 }
