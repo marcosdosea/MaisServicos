@@ -22,7 +22,7 @@ namespace MaisServicosWeb.Controllers
         // GET: ServicoController
         public ActionResult Index()
         {
-            var listaServicos = _servicoService.ConsultarTodos();
+            var listaServicos = _servicoService.GetAll();
             var listaServicosModels = _mapper.Map<List<ServicoViewModel>>(listaServicos);
             return View(listaServicosModels);
         }
@@ -30,7 +30,7 @@ namespace MaisServicosWeb.Controllers
         // GET: ServicoController/Details/5
         public ActionResult Details(int id)
         {
-            Servico servico = _servicoService.Obter(id);
+            Servico servico = _servicoService.Get(id);
             ServicoViewModel servicoModel = _mapper.Map<ServicoViewModel>(servico);
             return View(servicoModel);
         }
@@ -49,7 +49,7 @@ namespace MaisServicosWeb.Controllers
             if (ModelState.IsValid)
             {
                 var servico = _mapper.Map<Servico>(servicoModel);
-                _servicoService.Inserir(servico);
+                _servicoService.Create(servico);
             }
             return RedirectToAction(nameof(Index));
         }
@@ -57,7 +57,7 @@ namespace MaisServicosWeb.Controllers
         // GET: ServicoController/Edit/5
         public ActionResult Edit(int id)
         {
-            Servico servico = _servicoService.Obter(id);
+            Servico servico = _servicoService.Get(id);
             ServicoViewModel servicoModel = _mapper.Map<ServicoViewModel>(servico);
             return View(servicoModel);
         }
@@ -70,7 +70,7 @@ namespace MaisServicosWeb.Controllers
             if (ModelState.IsValid)
             {
                 var servico = _mapper.Map<Servico>(servicoModel);
-                _servicoService.Alterar(servico);
+                _servicoService.Edit(servico);
             }
             return RedirectToAction(nameof(Index));
         }
@@ -78,7 +78,7 @@ namespace MaisServicosWeb.Controllers
         // GET: ServicoController/Delete/5
         public ActionResult Delete(int id)
         {
-            Servico servico = _servicoService.Obter(id);
+            Servico servico = _servicoService.Get(id);
             ServicoViewModel servicoModel = _mapper.Map<ServicoViewModel>(servico);
             return View(servicoModel);
         }
@@ -88,7 +88,7 @@ namespace MaisServicosWeb.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Delete(int id, ServicoViewModel servicoModel)
         {
-            _servicoService.Excluir(id);
+            _servicoService.Delete(id);
             return RedirectToAction(nameof(Index));
         }
     }

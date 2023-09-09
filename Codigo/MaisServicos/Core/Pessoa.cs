@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Core;
+﻿namespace Core;
 
 public partial class Pessoa
 {
@@ -32,6 +29,4 @@ public partial class Pessoa
     public virtual ICollection<Servicocontratado> Servicocontratados { get; set; } = new List<Servicocontratado>();
 
     public virtual ICollection<Solicitarorcamento> Solicitarorcamentos { get; set; } = new List<Solicitarorcamento>();
-
-    public virtual ICollection<ManterPrestador> ManterPrestador { get; set; } = new List<ManterPrestador>();
 }

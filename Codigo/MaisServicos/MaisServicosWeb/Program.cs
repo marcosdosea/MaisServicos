@@ -1,4 +1,5 @@
 using Core;
+using Core.OrcamentoService;
 using Core.Service;
 using Microsoft.EntityFrameworkCore;
 using Service;
@@ -15,9 +16,12 @@ namespace MaisServicosWeb
             builder.Services.AddControllersWithViews();
 
             builder.Services.AddDbContext<MaisServicosContext>(
-                options => options.UseMySQL(builder.Configuration.GetConnectionString("MaisServicosDatabase")));
+                options => options.UseMySQL(builder.Configuration.GetConnectionString("MaisServicosConnection")));
 
             builder.Services.AddTransient<IClienteService, ClienteService>();
+            builder.Services.AddTransient<IPrestadorService, PrestadorService>();
+            builder.Services.AddTransient<IOrcamentoService, OrcamentoService>();
+            builder.Services.AddTransient<IServicoService, ServicoService>();
 
             builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
