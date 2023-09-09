@@ -71,14 +71,13 @@ mais constante. </p>
 <ul>
   <li>HTML5</li>
   <li>CSS3</li>
-  <li>JavaScript</li>
-  <li>Bootstrap</li>
-  <li>PHP</li>
   <li>MySQL</li>
+  <li>Linguagem C#</li>
+  <li>ASP.NET</li>
+  <li>Visual Studio</li>
 </ul>
-
 <ul>
-  <li>Videos de apresentaçao - indisponivel</li>
+  <li>Videos de apresentaçao - <a href="">indisponivel</a></li>
 </ul>
 
 <h2 id="equipe">6. Time de Desenvolvimento</h2>
