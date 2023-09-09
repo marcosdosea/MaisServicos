@@ -2,7 +2,7 @@
 
 namespace MaisServicosWeb.Models
 {
-    public class ServicoModel
+    public class ServicoViewModel
     {
         [Display(Name = "Código")]
         [Required(ErrorMessage = "Código do serviço é obrigatório!")]
