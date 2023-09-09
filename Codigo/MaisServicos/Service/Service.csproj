@@ -7,18 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-<<<<<<< HEAD
-=======
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.10">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-  </ItemGroup>
-
-  <ItemGroup>
->>>>>>> main
-    <ProjectReference Include="..\Core\Core.csproj" />
-    <ProjectReference Include="..\MaisServicosWeb\MaisServicosWeb.csproj" />
+	<ProjectReference Include="..\Core\Core.csproj" />
   </ItemGroup>
 
 </Project>
