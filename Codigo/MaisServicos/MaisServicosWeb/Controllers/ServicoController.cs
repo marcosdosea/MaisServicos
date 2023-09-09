@@ -23,7 +23,7 @@ namespace MaisServicosWeb.Controllers
         public ActionResult Index()
         {
             var listaServicos = _servicoService.ConsultarTodos();
-            var listaServicosModels = _mapper.Map<List<ServicoModel>>(listaServicos);
+            var listaServicosModels = _mapper.Map<List<ServicoViewModel>>(listaServicos);
             return View(listaServicosModels);
         }
 
@@ -31,7 +31,7 @@ namespace MaisServicosWeb.Controllers
         public ActionResult Details(int id)
         {
             Servico servico = _servicoService.Obter(id);
-            ServicoModel servicoModel = _mapper.Map<ServicoModel>(servico);
+            ServicoViewModel servicoModel = _mapper.Map<ServicoViewModel>(servico);
             return View(servicoModel);
         }
 
@@ -44,7 +44,7 @@ namespace MaisServicosWeb.Controllers
         // POST: ServicoController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(ServicoModel servicoModel)
+        public ActionResult Create(ServicoViewModel servicoModel)
         {
             if (ModelState.IsValid)
             {
@@ -58,14 +58,14 @@ namespace MaisServicosWeb.Controllers
         public ActionResult Edit(int id)
         {
             Servico servico = _servicoService.Obter(id);
-            ServicoModel servicoModel = _mapper.Map<ServicoModel>(servico);
+            ServicoViewModel servicoModel = _mapper.Map<ServicoViewModel>(servico);
             return View(servicoModel);
         }
 
         // POST: ServicoController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, ServicoModel servicoModel)
+        public ActionResult Edit(int id, ServicoViewModel servicoModel)
         {
             if (ModelState.IsValid)
             {
@@ -79,14 +79,14 @@ namespace MaisServicosWeb.Controllers
         public ActionResult Delete(int id)
         {
             Servico servico = _servicoService.Obter(id);
-            ServicoModel servicoModel = _mapper.Map<ServicoModel>(servico);
+            ServicoViewModel servicoModel = _mapper.Map<ServicoViewModel>(servico);
             return View(servicoModel);
         }
 
         // POST: ServicoController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, ServicoModel servicoModel)
+        public ActionResult Delete(int id, ServicoViewModel servicoModel)
         {
             _servicoService.Excluir(id);
             return RedirectToAction(nameof(Index));

@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -7,6 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+<<<<<<< HEAD
+=======
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.10">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -14,7 +16,9 @@
   </ItemGroup>
 
   <ItemGroup>
+>>>>>>> main
     <ProjectReference Include="..\Core\Core.csproj" />
+    <ProjectReference Include="..\MaisServicosWeb\MaisServicosWeb.csproj" />
   </ItemGroup>
 
 </Project>
