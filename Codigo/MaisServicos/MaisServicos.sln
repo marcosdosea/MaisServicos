@@ -7,11 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MaisServicosWeb", "MaisServ
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "Core\Core.csproj", "{509FC82C-44F2-4294-933F-AEC7219D2869}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service", "Service\Service.csproj", "{32624B6A-A27C-4697-BDC1-57DC4431ED5A}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaisServicoWebTests", "MaisServicoWebTests\MaisServicoWebTests.csproj", "{966D5F01-832F-4785-8A0B-342DFF97C6AA}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceTests", "ServiceTests\ServiceTests.csproj", "{F423D0B0-BA5A-4699-A88A-93844FB20905}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service", "Service\Service.csproj", "{32624B6A-A27C-4697-BDC1-57DC4431ED5A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,14 +27,6 @@ Global
 		{32624B6A-A27C-4697-BDC1-57DC4431ED5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{32624B6A-A27C-4697-BDC1-57DC4431ED5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{32624B6A-A27C-4697-BDC1-57DC4431ED5A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{966D5F01-832F-4785-8A0B-342DFF97C6AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{966D5F01-832F-4785-8A0B-342DFF97C6AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{966D5F01-832F-4785-8A0B-342DFF97C6AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{966D5F01-832F-4785-8A0B-342DFF97C6AA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F423D0B0-BA5A-4699-A88A-93844FB20905}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F423D0B0-BA5A-4699-A88A-93844FB20905}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F423D0B0-BA5A-4699-A88A-93844FB20905}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F423D0B0-BA5A-4699-A88A-93844FB20905}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
