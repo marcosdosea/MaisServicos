@@ -8,7 +8,7 @@ namespace MaisServicosWeb.Mappers
     {
         public AvaliarClienteProfile()
         {
-            CreateMap<AvaliarClienteViewModel, Pessoa>().ReverseMap();
+            CreateMap<AvaliarClienteViewModel, Avaliacao>().ReverseMap();
         }
     }
 }

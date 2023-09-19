@@ -9,16 +9,16 @@ namespace Core.Service
 {
     public interface IAvaliarClienteService
     {
-        public int Create(Pessoa Cliente);
+        public int Create(Avaliacao Cliente);
 
-        public void Edit(Pessoa Cliente);
+        public void Edit(Avaliacao Cliente);
 
         public void Delete(int idCliente);
 
-        Pessoa Get(int idCliente);
+        Avaliacao Get(int idCliente);
 
-        IEnumerable<Pessoa> GetAll();
+        IEnumerable<Avaliacao> GetAll();
 
-        IEnumerable<PessoaDTO> GetByName(string nome);
+        IEnumerable<Avaliacao> GetByName(string nome);
     }
 }

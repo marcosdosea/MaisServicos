@@ -25,14 +25,12 @@ namespace Service
         /// </summary>
         /// <param name="Cliente"></param>
         /// <returns>id</returns>
-        /// <exception cref="NotImplementedException"></exception>
-        public int Create(Pessoa Cliente)
+        public int Create(Avaliacao Cliente)
         {
             _context.Add(Cliente);
             _context.SaveChanges();
             return Cliente.Id;
         }
-
 
         /// <summary>
         /// Remove Avaliçao feita ao cliente do serviço prestado
@@ -43,28 +41,27 @@ namespace Service
             var _cliente = _context.Servicos.Find(idCliente);
             _context.Remove(_cliente);
             _context.SaveChanges();
-        }
 
+        }
 
         /// <summary>
-        /// Altera os dados da avaliçao do cliente
+        /// Altera os dados da avaliçao do client
         /// </summary>
         /// <param name="Cliente"></param>
-        public void Edit(Pessoa Cliente)
+        public void Edit(Avaliacao Cliente)
         {
-            _context.Update(Cliente);
-            _context.SaveChanges();
+           _context.Update(Cliente);
+           _context.SaveChanges();
         }
-
 
         /// <summary>
         /// Buscar um cliente para avaliaçao na base de dados
         /// </summary>
         /// <param name="idCliente"></param>
         /// <returns></returns>
-        public Pessoa Get(int idCliente)
+        public Avaliacao Get(int idCliente)
         {
-            return _context.Pessoas.Find(idCliente);
+            return _context.Avaliacaos.Find(idCliente);
         }
 
 
@@ -72,28 +69,22 @@ namespace Service
         /// Buscar um cliente do serviço prestado
         /// </summary>
         /// <returns></returns>
- 
-        public IEnumerable<Pessoa> GetAll()
+        public IEnumerable<Avaliacao> GetAll()
         {
-            return (IEnumerable<Pessoa>)_context.Pessoas.AsNoTracking();
+            return (IEnumerable<Avaliacao>)_context.Avaliacaos.AsNoTracking();
         }
 
-        /// <summary>
-        /// Buscar todos os cliente de serviços prestados
-        /// </summary>
-        /// <param name="nome">nome do cliente</param>
-        /// <returns>Lista de clientes que inicia com o nome escolhido</returns>
-        public IEnumerable<PessoaDTO> GetByName(string nome)
+        public IEnumerable<Avaliacao> GetByName(string nome)
         {
-            var query = from client in _context.Pessoas
-                        where client.Nome.StartsWith(nome)
-                        orderby client.Nome
-                        select new PessoaDTO
-                        { 
-                            Id = client.Id, 
-                            Nome = nome
+            var query = from cliente in _context.Avaliacaos
+                        where cliente.Nota.StartsWith(nome)
+                        select new Avaliacao
+                        {
+                            Id = cliente.Id
                         };
             return query;
+
         }
     }
+
 }

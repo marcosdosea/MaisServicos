@@ -32,7 +32,7 @@ namespace MaisServicosWeb.Controllers
         // GET: AvaliarClienteController/Details/5
         public ActionResult Details(int id)
         {   
-            Pessoa client =_avaliarClienteService.Get(id);
+            Avaliacao client =_avaliarClienteService.Get(id);
             AvaliarClienteViewModel avaliarClienteViewModel = _mapper.Map<AvaliarClienteViewModel>(client);
             return View(avaliarClienteViewModel);
         }
@@ -50,7 +50,7 @@ namespace MaisServicosWeb.Controllers
         {
             if (ModelState.IsValid)
             {
-                var client = _mapper.Map<Pessoa>(avaliarClienteViewModel);
+                var client = _mapper.Map<Avaliacao>(avaliarClienteViewModel);
                 _avaliarClienteService.Create(client);
             }
             return RedirectToAction(nameof(Index));
@@ -59,7 +59,7 @@ namespace MaisServicosWeb.Controllers
         // GET: AvaliarClienteController/Edit/5
         public ActionResult Edit(int id)
         {
-            Pessoa client = _avaliarClienteService.Get(id);
+            Avaliacao client = _avaliarClienteService.Get(id);
             AvaliarClienteViewModel avaliarClienteViewModel = _mapper.Map<AvaliarClienteViewModel>(client);
             return View(avaliarClienteViewModel);
         }
@@ -71,7 +71,7 @@ namespace MaisServicosWeb.Controllers
         {
             if (ModelState.IsValid)
             {
-                var client = _mapper.Map<Pessoa>(avaliarClienteViewModel);
+                var client = _mapper.Map<Avaliacao>(avaliarClienteViewModel);
                 _avaliarClienteService.Edit(client);
             }
             return RedirectToAction(nameof(Index));   
@@ -80,7 +80,7 @@ namespace MaisServicosWeb.Controllers
         // GET: AvaliarClienteController/Delete/5
         public ActionResult Delete(int id)
         {
-            Pessoa cliente = _avaliarClienteService.Get(id);
+            Avaliacao cliente = _avaliarClienteService.Get(id);
             AvaliarClienteViewModel avaliarClienteViewModel = _mapper.Map<AvaliarClienteViewModel>(cliente);
             return View(avaliarClienteViewModel);
         }

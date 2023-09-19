@@ -13,15 +13,15 @@ namespace MaisServicosWeb.Models
         [Required(ErrorMessage = "Este campo é obrigatório")]
         public string Nome { get; set; } = null!;
 
-        [Display(Name = "O que voce achou do serviço prestador")]
+        [Display(Name = "O que voce achou do serviço prestado")]
         [Required(ErrorMessage = "Este campo é obrigatório.")]
         public string Descriçao { get; set; } = null!;
 
-        [Display(Name = "O que pode melhorar ")]
+        [Display(Name = "O que pode melhorar")]
         [Required(ErrorMessage = "Este campo é obrigatório.")]
         public string Nota { get; set; } = null!;
 
-        [Display(Name = "Qualidades ")]
+        [Display(Name = "Qualidades")]
         [Required(ErrorMessage = "Este campo é obrigatório.")]
         public string Qualidade { get; set; } = null!;
 
