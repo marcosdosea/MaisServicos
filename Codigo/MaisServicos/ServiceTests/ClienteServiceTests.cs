@@ -54,7 +54,7 @@ namespace Service.Tests
                 },
                 new Pessoa
                 {
-                    Id = 1,
+                    Id = 3,
                     Nome = "Cássio Ramos",
                     Email = "gigantecassio@gmail.com",
                     Cpf = "37498476136",
@@ -86,7 +86,7 @@ namespace Service.Tests
                 Telefone = "87999871234",
                 Cep = "53699455",
                 Estado = "CE",
-                Cidade = "Foertaleza",
+                Cidade = "Fortaleza",
                 Bairro = "Invasão",
                 Rua = "Fiel Macabra",
                 Numero = "06"
