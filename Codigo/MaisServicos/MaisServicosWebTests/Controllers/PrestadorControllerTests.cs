@@ -38,12 +38,6 @@ namespace MaisServicosWeb.Controllers.Tests
 
 
         [TestMethod()]
-        public void PrestadorControllerTest()
-        {
-            Assert.Fail();
-        }
-
-        [TestMethod()]
         public void IndexTest()
         {
             //Act
