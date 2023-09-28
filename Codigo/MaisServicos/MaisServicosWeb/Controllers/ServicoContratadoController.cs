@@ -15,6 +15,12 @@ namespace MaisServicosWeb.Controllers
         private readonly IServicoContratado? _servicoContratado;
         private readonly IMapper? _mapper;
 
+        public ServicoContratadoController (IServicoContratado servicoContratado, IMapper mapper)
+        {
+            _servicoContratado = servicoContratado;
+            _mapper = mapper;
+        }
+
         // GET: ServicoController
         public ActionResult Index()
         {
