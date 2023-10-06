@@ -1,4 +1,7 @@
-﻿namespace Core;
+﻿using System;
+using System.Collections.Generic;
+
+namespace Core;
 
 public partial class Pessoa
 {
@@ -23,6 +26,8 @@ public partial class Pessoa
     public string Rua { get; set; } = null!;
 
     public string Numero { get; set; } = null!;
+
+    public string TipoPessoa { get; set; } = null!;
 
     public virtual ICollection<Avaliacao> Avaliacaos { get; set; } = new List<Avaliacao>();
 

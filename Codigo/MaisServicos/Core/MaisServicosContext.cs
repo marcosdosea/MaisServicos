@@ -35,10 +35,10 @@ public partial class MaisServicosContext : DbContext
     {
         if (!optionsBuilder.IsConfigured)
         {
-           // #warning To protect potentially sensitive information in your connection string, you should move it out of source// code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration //- see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see //http://go.microsoft.com/fwlink/?LinkId=723263.
-             //       => optionsBuilder.UseMySQL("server=localhost;port=3306;user=root;password=123456;database=MaisServicos");
+            /*#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+                    => optionsBuilder.UseMySQL("server=localhost;port=3306;user=root;password=V!tor2154;database=MaisServicos");*/
         }
-    }
+    } 
 
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -53,7 +53,9 @@ public partial class MaisServicosContext : DbContext
 
             entity.HasIndex(e => e.Nome, "idxNome");
 
-            entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.Id)
+                .HasColumnType("int(11)")
+                .HasColumnName("id");
             entity.Property(e => e.Nome)
                 .HasMaxLength(50)
                 .HasColumnName("nome");
@@ -69,14 +71,18 @@ public partial class MaisServicosContext : DbContext
 
             entity.HasIndex(e => e.Id, "id_UNIQUE").IsUnique();
 
-            entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.Id)
+                .HasColumnType("int(11)")
+                .HasColumnName("id");
             entity.Property(e => e.Data)
                 .HasColumnType("datetime")
                 .HasColumnName("data");
             entity.Property(e => e.Descricao)
                 .HasMaxLength(1000)
                 .HasColumnName("descricao");
-            entity.Property(e => e.IdPessoa).HasColumnName("idPessoa");
+            entity.Property(e => e.IdPessoa)
+                .HasColumnType("int(11)")
+                .HasColumnName("idPessoa");
             entity.Property(e => e.Nota)
                 .HasColumnType("enum('1','2','3','4','5')")
                 .HasColumnName("nota");
@@ -97,14 +103,18 @@ public partial class MaisServicosContext : DbContext
 
             entity.HasIndex(e => e.Id, "id_UNIQUE").IsUnique();
 
-            entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.Id)
+                .HasColumnType("int(11)")
+                .HasColumnName("id");
             entity.Property(e => e.Data)
                 .HasColumnType("datetime")
                 .HasColumnName("data");
             entity.Property(e => e.Descricao)
                 .HasMaxLength(1000)
                 .HasColumnName("descricao");
-            entity.Property(e => e.IdSolicita).HasColumnName("idSolicita");
+            entity.Property(e => e.IdSolicita)
+                .HasColumnType("int(11)")
+                .HasColumnName("idSolicita");
             entity.Property(e => e.Valor).HasColumnName("valor");
 
             entity.HasOne(d => d.IdSolicitaNavigation).WithMany(p => p.Orcamentos)
@@ -123,7 +133,9 @@ public partial class MaisServicosContext : DbContext
 
             entity.HasIndex(e => e.Nome, "idxNome");
 
-            entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.Id)
+                .HasColumnType("int(11)")
+                .HasColumnName("id");
             entity.Property(e => e.Bairro)
                 .HasMaxLength(50)
                 .HasColumnName("bairro");
@@ -154,6 +166,10 @@ public partial class MaisServicosContext : DbContext
             entity.Property(e => e.Telefone)
                 .HasMaxLength(11)
                 .HasColumnName("telefone");
+            entity.Property(e => e.TipoPessoa)
+                .HasDefaultValueSql("'cliente'")
+                .HasColumnType("enum('cliente','prestador','admin')")
+                .HasColumnName("tipoPessoa");
         });
 
         modelBuilder.Entity<Servico>(entity =>
@@ -168,11 +184,15 @@ public partial class MaisServicosContext : DbContext
 
             entity.HasIndex(e => e.Nome, "idxNome");
 
-            entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.Id)
+                .HasColumnType("int(11)")
+                .HasColumnName("id");
             entity.Property(e => e.Descricao)
                 .HasMaxLength(1000)
                 .HasColumnName("descricao");
-            entity.Property(e => e.IdAreaDeAtuacao).HasColumnName("idAreaDeAtuacao");
+            entity.Property(e => e.IdAreaDeAtuacao)
+                .HasColumnType("int(11)")
+                .HasColumnName("idAreaDeAtuacao");
             entity.Property(e => e.Nome)
                 .HasMaxLength(50)
                 .HasColumnName("nome");
@@ -199,9 +219,15 @@ public partial class MaisServicosContext : DbContext
                         j.ToTable("servicoservicocontratado");
                         j.HasIndex(new[] { "IdServico" }, "fk_Servico_has_ServicoContratado_Servico1_idx");
                         j.HasIndex(new[] { "IdServicoContratado", "IdOrcamentoServicoContratado" }, "fk_Servico_has_ServicoContratado_ServicoContratado1_idx");
-                        j.IndexerProperty<int>("IdServico").HasColumnName("idServico");
-                        j.IndexerProperty<int>("IdServicoContratado").HasColumnName("idServicoContratado");
-                        j.IndexerProperty<int>("IdOrcamentoServicoContratado").HasColumnName("idOrcamentoServicoContratado");
+                        j.IndexerProperty<int>("IdServico")
+                            .HasColumnType("int(11)")
+                            .HasColumnName("idServico");
+                        j.IndexerProperty<int>("IdServicoContratado")
+                            .HasColumnType("int(11)")
+                            .HasColumnName("idServicoContratado");
+                        j.IndexerProperty<int>("IdOrcamentoServicoContratado")
+                            .HasColumnType("int(11)")
+                            .HasColumnName("idOrcamentoServicoContratado");
                     });
         });
 
@@ -223,11 +249,20 @@ public partial class MaisServicosContext : DbContext
 
             entity.Property(e => e.Id)
                 .ValueGeneratedOnAdd()
+                .HasColumnType("int(11)")
                 .HasColumnName("id");
-            entity.Property(e => e.IdOrcamento).HasColumnName("idOrcamento");
-            entity.Property(e => e.IdAvaliacao).HasColumnName("idAvaliacao");
-            entity.Property(e => e.IdPessoa).HasColumnName("idPessoa");
-            entity.Property(e => e.IdTemplateContrato).HasColumnName("idTemplateContrato");
+            entity.Property(e => e.IdOrcamento)
+                .HasColumnType("int(11)")
+                .HasColumnName("idOrcamento");
+            entity.Property(e => e.IdAvaliacao)
+                .HasColumnType("int(11)")
+                .HasColumnName("idAvaliacao");
+            entity.Property(e => e.IdPessoa)
+                .HasColumnType("int(11)")
+                .HasColumnName("idPessoa");
+            entity.Property(e => e.IdTemplateContrato)
+                .HasColumnType("int(11)")
+                .HasColumnName("idTemplateContrato");
             entity.Property(e => e.Valor).HasColumnName("valor");
 
             entity.HasOne(d => d.IdAvaliacaoNavigation).WithMany(p => p.Servicocontratados)
@@ -261,14 +296,18 @@ public partial class MaisServicosContext : DbContext
 
             entity.HasIndex(e => e.Id, "id_UNIQUE").IsUnique();
 
-            entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.Id)
+                .HasColumnType("int(11)")
+                .HasColumnName("id");
             entity.Property(e => e.Data)
                 .HasColumnType("datetime")
                 .HasColumnName("data");
             entity.Property(e => e.Descricao)
                 .HasMaxLength(1000)
                 .HasColumnName("descricao");
-            entity.Property(e => e.IdPessoa).HasColumnName("idPessoa");
+            entity.Property(e => e.IdPessoa)
+                .HasColumnType("int(11)")
+                .HasColumnName("idPessoa");
 
             entity.HasOne(d => d.IdPessoaNavigation).WithMany(p => p.Solicitarorcamentos)
                 .HasForeignKey(d => d.IdPessoa)
@@ -284,7 +323,9 @@ public partial class MaisServicosContext : DbContext
 
             entity.HasIndex(e => e.Id, "id_UNIQUE").IsUnique();
 
-            entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.Id)
+                .HasColumnType("int(11)")
+                .HasColumnName("id");
             entity.Property(e => e.Arquivo)
                 .HasColumnType("blob")
                 .HasColumnName("arquivo");
