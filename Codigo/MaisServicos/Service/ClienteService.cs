@@ -63,7 +63,7 @@ namespace Service
         /// <returns>Lista de clientes</returns>
         public IEnumerable<Pessoa> GetAll()
         {
-            return (IEnumerable<Pessoa>)_context.Pessoas.AsNoTracking();
+            return _context.Pessoas.AsNoTracking();
         }
 
         /// <summary>

@@ -2,10 +2,12 @@
 using Core;
 using Core.OrcamentoService;
 using MaisServicosWeb.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MaisServicosWeb.Controllers
 {
+    [Authorize(Roles = "prestador")]
     public class OrcamentoController : Controller
     {
         private readonly IOrcamentoService _orcamentoService;

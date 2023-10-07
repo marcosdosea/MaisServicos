@@ -2,11 +2,13 @@
 using Core;
 using Core.Service;
 using MaisServicosWeb.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MaisServicosWeb.Controllers
 {
+    [Authorize(Roles = "prestador")]
     public class AvaliarClienteController : Controller
     {
 
