@@ -24,9 +24,6 @@ namespace MaisServicosWeb
             builder.Services.AddDbContext<IdentityContext>(
                 options => options.UseMySQL(builder.Configuration.GetConnectionString("MaisServicosConnection")));
 
-            builder.Services.AddDefaultIdentity<UsuarioIdentity>(options => options.SignIn.RequireConfirmedAccount = true)
-                .AddEntityFrameworkStores<IdentityContext>();
-
             builder.Services.AddTransient<IClienteService, ClienteService>();
             builder.Services.AddTransient<IPrestadorService, PrestadorService>();
             builder.Services.AddTransient<IOrcamentoService, OrcamentoService>();
