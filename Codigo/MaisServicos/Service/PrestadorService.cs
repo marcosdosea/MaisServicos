@@ -69,7 +69,11 @@ namespace Service
         /// <returns>Lista com todos os prestadores</returns>
         public IEnumerable<Pessoa> GetAll()
         {
-            return (IEnumerable<Pessoa>)_context.Pessoas.AsNoTracking();
+            var query = from prestador in _context.Pessoas
+                        where prestador.TipoPessoa.Equals("prestador")
+                        select prestador;
+
+            return query;
         }
 
 
