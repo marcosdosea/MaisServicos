@@ -28,6 +28,9 @@ namespace MaisServicosWeb
             builder.Services.AddTransient<IPrestadorService, PrestadorService>();
             builder.Services.AddTransient<IOrcamentoService, OrcamentoService>();
             builder.Services.AddTransient<IServicoService, ServicoService>();
+            builder.Services.AddTransient<IAreaDeAtuacao, AreaDeAtuacaoService>();
+            builder.Services.AddTransient<IAvaliarClienteService, AvaliarClienteService>();
+            builder.Services.AddTransient<IServicoContratado, ServicoContratadoService>();
 
             builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
