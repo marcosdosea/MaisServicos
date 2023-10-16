@@ -5,7 +5,7 @@ namespace MaisServicosWeb.Models
     public class ServicoViewModel
     {
         [Display(Name = "Código")]
-        [Required(ErrorMessage = "Código do serviço é obrigatório!")]
+        [Required(ErrorMessage = "Código do serviço é obrigatório!!")]
         public int Id { get; set; }
 
         [Required(ErrorMessage = "Campo Requerido")]
