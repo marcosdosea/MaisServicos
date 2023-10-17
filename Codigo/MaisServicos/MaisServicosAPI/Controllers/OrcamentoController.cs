@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using Core.Service;
 using Core;
 using Microsoft.AspNetCore.Mvc;
 using Core.OrcamentoService;
@@ -61,7 +60,7 @@ namespace MaisServicosAPI.Controllers
             var orcamento = _mapper.Map<Orcamento>(orcamentoViewModel);
             _orcamentoService.Create(orcamento);
 
-            return Ok(orcamento);
+            return Ok();
         }
 
         // PUT api/<PrestadorController>/5
@@ -80,7 +79,7 @@ namespace MaisServicosAPI.Controllers
             }
             _orcamentoService.Create(orcamento);
 
-            return Ok(orcamento);
+            return Ok();
         }
 
         // DELETE api/<PrestadorController>/5
