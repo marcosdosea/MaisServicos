@@ -1,8 +1,8 @@
 -- MySQL dump 10.13  Distrib 8.0.34, for Win64 (x86_64)
 --
--- Host: localhost    Database: maisservicos
+-- Host: 127.0.0.1    Database: maisservicos
 -- ------------------------------------------------------
--- Server version	5.7.43-log
+-- Server version	8.0.34
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -26,7 +26,7 @@ CREATE TABLE `__efmigrationshistory` (
   `MigrationId` varchar(150) NOT NULL,
   `ProductVersion` varchar(32) NOT NULL,
   PRIMARY KEY (`MigrationId`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -35,7 +35,6 @@ CREATE TABLE `__efmigrationshistory` (
 
 LOCK TABLES `__efmigrationshistory` WRITE;
 /*!40000 ALTER TABLE `__efmigrationshistory` DISABLE KEYS */;
-INSERT INTO `__efmigrationshistory` VALUES ('20231006131430_CreateIdentitySchema','7.0.10');
 /*!40000 ALTER TABLE `__efmigrationshistory` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -47,12 +46,12 @@ DROP TABLE IF EXISTS `areadeatuacao`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `areadeatuacao` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int NOT NULL AUTO_INCREMENT,
   `nome` varchar(50) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`),
   KEY `idxNome` (`nome`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -72,14 +71,14 @@ DROP TABLE IF EXISTS `aspnetroleclaims`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `aspnetroleclaims` (
-  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `Id` int NOT NULL AUTO_INCREMENT,
   `RoleId` varchar(255) NOT NULL,
   `ClaimType` longtext,
   `ClaimValue` longtext,
   PRIMARY KEY (`Id`),
   KEY `IX_AspNetRoleClaims_RoleId` (`RoleId`),
   CONSTRAINT `FK_AspNetRoleClaims_AspNetRoles_RoleId` FOREIGN KEY (`RoleId`) REFERENCES `aspnetroles` (`Id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -105,7 +104,7 @@ CREATE TABLE `aspnetroles` (
   `ConcurrencyStamp` longtext,
   PRIMARY KEY (`Id`),
   UNIQUE KEY `RoleNameIndex` (`NormalizedName`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -125,14 +124,14 @@ DROP TABLE IF EXISTS `aspnetuserclaims`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `aspnetuserclaims` (
-  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `Id` int NOT NULL AUTO_INCREMENT,
   `UserId` varchar(255) NOT NULL,
   `ClaimType` longtext,
   `ClaimValue` longtext,
   PRIMARY KEY (`Id`),
   KEY `IX_AspNetUserClaims_UserId` (`UserId`),
   CONSTRAINT `FK_AspNetUserClaims_AspNetUsers_UserId` FOREIGN KEY (`UserId`) REFERENCES `aspnetusers` (`Id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -159,7 +158,7 @@ CREATE TABLE `aspnetuserlogins` (
   PRIMARY KEY (`LoginProvider`,`ProviderKey`),
   KEY `IX_AspNetUserLogins_UserId` (`UserId`),
   CONSTRAINT `FK_AspNetUserLogins_AspNetUsers_UserId` FOREIGN KEY (`UserId`) REFERENCES `aspnetusers` (`Id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -185,7 +184,7 @@ CREATE TABLE `aspnetuserroles` (
   KEY `IX_AspNetUserRoles_RoleId` (`RoleId`),
   CONSTRAINT `FK_AspNetUserRoles_AspNetRoles_RoleId` FOREIGN KEY (`RoleId`) REFERENCES `aspnetroles` (`Id`) ON DELETE CASCADE,
   CONSTRAINT `FK_AspNetUserRoles_AspNetUsers_UserId` FOREIGN KEY (`UserId`) REFERENCES `aspnetusers` (`Id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -217,13 +216,13 @@ CREATE TABLE `aspnetusers` (
   `PhoneNumber` longtext,
   `PhoneNumberConfirmed` tinyint(1) NOT NULL,
   `TwoFactorEnabled` tinyint(1) NOT NULL,
-  `LockoutEnd` datetime(6) DEFAULT NULL,
+  `LockoutEnd` datetime DEFAULT NULL,
   `LockoutEnabled` tinyint(1) NOT NULL,
-  `AccessFailedCount` int(11) NOT NULL,
+  `AccessFailedCount` int NOT NULL,
   PRIMARY KEY (`Id`),
   UNIQUE KEY `UserNameIndex` (`NormalizedUserName`),
   KEY `EmailIndex` (`NormalizedEmail`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -233,6 +232,34 @@ CREATE TABLE `aspnetusers` (
 LOCK TABLES `aspnetusers` WRITE;
 /*!40000 ALTER TABLE `aspnetusers` DISABLE KEYS */;
 /*!40000 ALTER TABLE `aspnetusers` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `aspnetusers_has_pessoa`
+--
+
+DROP TABLE IF EXISTS `aspnetusers_has_pessoa`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `aspnetusers_has_pessoa` (
+  `aspnetusers_Id` varchar(255) NOT NULL,
+  `pessoa_id` int NOT NULL,
+  PRIMARY KEY (`aspnetusers_Id`,`pessoa_id`),
+  UNIQUE KEY `index` (`pessoa_id`,`aspnetusers_Id`),
+  KEY `fk_aspnetusers_has_pessoa_pessoa1_idx` (`pessoa_id`),
+  KEY `fk_aspnetusers_has_pessoa_aspnetusers1_idx` (`aspnetusers_Id`),
+  CONSTRAINT `fk_aspnetusers_has_pessoa_aspnetusers1` FOREIGN KEY (`aspnetusers_Id`) REFERENCES `aspnetusers` (`Id`),
+  CONSTRAINT `fk_aspnetusers_has_pessoa_pessoa1` FOREIGN KEY (`pessoa_id`) REFERENCES `pessoa` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `aspnetusers_has_pessoa`
+--
+
+LOCK TABLES `aspnetusers_has_pessoa` WRITE;
+/*!40000 ALTER TABLE `aspnetusers_has_pessoa` DISABLE KEYS */;
+/*!40000 ALTER TABLE `aspnetusers_has_pessoa` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -249,7 +276,7 @@ CREATE TABLE `aspnetusertokens` (
   `Value` longtext,
   PRIMARY KEY (`UserId`,`LoginProvider`,`Name`),
   CONSTRAINT `FK_AspNetUserTokens_AspNetUsers_UserId` FOREIGN KEY (`UserId`) REFERENCES `aspnetusers` (`Id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -269,16 +296,16 @@ DROP TABLE IF EXISTS `avaliacao`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `avaliacao` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int NOT NULL AUTO_INCREMENT,
   `data` datetime NOT NULL,
   `nota` enum('1','2','3','4','5') NOT NULL,
   `descricao` varchar(1000) NOT NULL,
-  `idPessoa` int(11) NOT NULL,
+  `idPessoa` int NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`),
   KEY `fk_Avaliacao_Pessoa1_idx` (`idPessoa`),
   CONSTRAINT `fk_Avaliacao_Pessoa1` FOREIGN KEY (`idPessoa`) REFERENCES `pessoa` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -298,16 +325,16 @@ DROP TABLE IF EXISTS `orcamento`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `orcamento` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int NOT NULL AUTO_INCREMENT,
   `valor` float NOT NULL,
   `descricao` varchar(1000) NOT NULL,
   `data` datetime NOT NULL,
-  `idSolicita` int(11) NOT NULL,
+  `idSolicita` int NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`),
   KEY `fk_Orcamento_Solicita1_idx` (`idSolicita`),
   CONSTRAINT `fk_Orcamento_Solicita1` FOREIGN KEY (`idSolicita`) REFERENCES `solicitarorcamento` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -327,7 +354,7 @@ DROP TABLE IF EXISTS `pessoa`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `pessoa` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int NOT NULL AUTO_INCREMENT,
   `nome` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
   `cpf` varchar(11) NOT NULL,
@@ -342,7 +369,7 @@ CREATE TABLE `pessoa` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`),
   KEY `idxNome` (`nome`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -362,16 +389,16 @@ DROP TABLE IF EXISTS `servico`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `servico` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int NOT NULL AUTO_INCREMENT,
   `nome` varchar(50) NOT NULL,
   `descricao` varchar(1000) NOT NULL,
-  `idAreaDeAtuacao` int(11) NOT NULL,
+  `idAreaDeAtuacao` int NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`),
   KEY `idxNome` (`nome`),
   KEY `fk_Servico_AreaDeAtuacao1_idx` (`idAreaDeAtuacao`),
   CONSTRAINT `fk_Servico_AreaDeAtuacao1` FOREIGN KEY (`idAreaDeAtuacao`) REFERENCES `areadeatuacao` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -391,12 +418,12 @@ DROP TABLE IF EXISTS `servicocontratado`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `servicocontratado` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int NOT NULL AUTO_INCREMENT,
   `valor` float NOT NULL,
-  `idPessoa` int(11) NOT NULL,
-  `idAvaliacao` int(11) NOT NULL,
-  `idTemplateContrato` int(11) NOT NULL,
-  `idOrcamento` int(11) NOT NULL,
+  `idPessoa` int NOT NULL,
+  `idAvaliacao` int NOT NULL,
+  `idTemplateContrato` int NOT NULL,
+  `idOrcamento` int NOT NULL,
   PRIMARY KEY (`id`,`idOrcamento`),
   UNIQUE KEY `id_UNIQUE` (`id`),
   KEY `fk_ServicoContratado_Pessoa1_idx` (`idPessoa`),
@@ -407,7 +434,7 @@ CREATE TABLE `servicocontratado` (
   CONSTRAINT `fk_ServicoContratado_Orcamento1` FOREIGN KEY (`idOrcamento`) REFERENCES `orcamento` (`id`),
   CONSTRAINT `fk_ServicoContratado_Pessoa1` FOREIGN KEY (`idPessoa`) REFERENCES `pessoa` (`id`),
   CONSTRAINT `fk_ServicoContratado_TemplateContrato1` FOREIGN KEY (`idTemplateContrato`) REFERENCES `templatecontrato` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -427,15 +454,15 @@ DROP TABLE IF EXISTS `servicoservicocontratado`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `servicoservicocontratado` (
-  `idServico` int(11) NOT NULL,
-  `idServicoContratado` int(11) NOT NULL,
-  `idOrcamentoServicoContratado` int(11) NOT NULL,
+  `idServico` int NOT NULL,
+  `idServicoContratado` int NOT NULL,
+  `idOrcamentoServicoContratado` int NOT NULL,
   PRIMARY KEY (`idServico`,`idServicoContratado`,`idOrcamentoServicoContratado`),
   KEY `fk_Servico_has_ServicoContratado_ServicoContratado1_idx` (`idServicoContratado`,`idOrcamentoServicoContratado`),
   KEY `fk_Servico_has_ServicoContratado_Servico1_idx` (`idServico`),
   CONSTRAINT `fk_Servico_has_ServicoContratado_Servico1` FOREIGN KEY (`idServico`) REFERENCES `servico` (`id`),
   CONSTRAINT `fk_Servico_has_ServicoContratado_ServicoContratado1` FOREIGN KEY (`idServicoContratado`, `idOrcamentoServicoContratado`) REFERENCES `servicocontratado` (`id`, `idOrcamento`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -455,15 +482,15 @@ DROP TABLE IF EXISTS `solicitarorcamento`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `solicitarorcamento` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int NOT NULL AUTO_INCREMENT,
   `descricao` varchar(1000) NOT NULL,
   `data` datetime NOT NULL,
-  `idPessoa` int(11) NOT NULL,
+  `idPessoa` int NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`),
   KEY `fk_Solicita_Pessoa_idx` (`idPessoa`),
   CONSTRAINT `fk_Solicita_Pessoa` FOREIGN KEY (`idPessoa`) REFERENCES `pessoa` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -483,11 +510,11 @@ DROP TABLE IF EXISTS `templatecontrato`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `templatecontrato` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int NOT NULL AUTO_INCREMENT,
   `arquivo` blob NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -508,4 +535,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-10-06 20:54:10
+-- Dump completed on 2023-10-20 20:25:20
