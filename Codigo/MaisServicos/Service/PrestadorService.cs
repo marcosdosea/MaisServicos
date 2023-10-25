@@ -17,14 +17,14 @@ namespace Service
         public PrestadorService(MaisServicosContext context)
         {
             _context = context;
-        }   
+        }
 
         /// <summary>
         /// Criar Prestador na base de dados
         /// </summary>
         /// <param name="prestador"></param>
         /// <returns> id do prestador</returns>
-         public int Create(Pessoa prestador)
+        public int Create(Pessoa prestador)
         {
             _context.Add(prestador);
             _context.SaveChanges();
@@ -39,7 +39,6 @@ namespace Service
             var _prestador = _context.Pessoas.Find(idprestador);
             _context.Remove(_prestador);
             _context.SaveChanges();
-            throw new NotImplementedException();
         }
 
 
@@ -50,7 +49,7 @@ namespace Service
         public void Edit(Pessoa prestador)
         {
             _context.Update(prestador);
-            _context.SaveChanges(true);
+            _context.SaveChanges();
         }
 
         /// <summary>

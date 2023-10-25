@@ -72,7 +72,7 @@ namespace MaisServicosWeb.Controllers.Tests
             Assert.AreEqual("Itabaiana", prestadorView.Cidade);
             Assert.AreEqual("Marianga", prestadorView.Bairro);
             Assert.AreEqual("Gaviões da fiel", prestadorView.Rua);
-            Assert.AreEqual("09", prestadorView.NumeroCasa);
+            Assert.AreEqual("09", prestadorView.Numero);
         }
 
         [TestMethod()]
@@ -136,7 +136,7 @@ namespace MaisServicosWeb.Controllers.Tests
             Assert.AreEqual("Itabaiana", prestadorView.Cidade);
             Assert.AreEqual("Marianga", prestadorView.Bairro);
             Assert.AreEqual("Gaviões da fiel", prestadorView.Rua);
-            Assert.AreEqual("09", prestadorView.NumeroCasa);
+            Assert.AreEqual("09", prestadorView.Numero);
         }
 
         [TestMethod()]
@@ -172,7 +172,7 @@ namespace MaisServicosWeb.Controllers.Tests
             Assert.AreEqual("Itabaiana", prestadorView.Cidade);
             Assert.AreEqual("Marianga", prestadorView.Bairro);
             Assert.AreEqual("Gaviões da fiel", prestadorView.Rua);
-            Assert.AreEqual("09", prestadorView.NumeroCasa);
+            Assert.AreEqual("09", prestadorView.Numero);
         }
 
         [TestMethod()]
@@ -202,7 +202,7 @@ namespace MaisServicosWeb.Controllers.Tests
                 Cidade = "Foertaleza",
                 Bairro = "Invasão",
                 Rua = "Fiel Macabra",
-                NumeroCasa = "06"
+                Numero = "06"
             };
         }
 
@@ -238,7 +238,7 @@ namespace MaisServicosWeb.Controllers.Tests
                 Cidade = "Itabaiana",
                 Bairro = "Marianga",
                 Rua = "Gaviões da fiel",
-                NumeroCasa = "09"
+                Numero = "09"
             };
         }
 

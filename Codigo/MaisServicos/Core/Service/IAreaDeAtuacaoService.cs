@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Core.Service
 {
-    public interface IAreaDeAtuacao
+    public interface IAreaDeAtuacaoService
     {
         public int Create(Areadeatuacao areaDeAtuacao);
 

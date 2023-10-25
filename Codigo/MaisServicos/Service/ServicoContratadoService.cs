@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Service
 {
-    public class ServicoContratadoService : IServicoContratado
+    public class ServicoContratadoService : IServicoContratadoService
     {
         private readonly MaisServicosContext _context;
 

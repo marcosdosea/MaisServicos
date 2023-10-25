@@ -2,12 +2,6 @@
 using Core.Service;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Service;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Service.Tests
 {
@@ -17,6 +11,7 @@ namespace Service.Tests
         private MaisServicosContext _context;
         private IPrestadorService _prestadorService;
 
+        [TestInitialize]
         public void Initialize()
         {
             //Arrenge
@@ -41,7 +36,8 @@ namespace Service.Tests
                     Cidade = "Itabaiana",
                     Bairro = "Marianga",
                     Rua = "Gaviões da fiel",
-                    Numero = "09"
+                    Numero = "09",
+                    TipoPessoa = "prestador"
                 },
                 new Pessoa
                 {
@@ -55,7 +51,8 @@ namespace Service.Tests
                     Cidade = "São Domingos",
                     Bairro = "Ponto Novo",
                     Rua = "Camisa 12",
-                    Numero = "08"
+                    Numero = "08",
+                    TipoPessoa = "prestador"
                 },
                 new Pessoa
                 {
@@ -69,7 +66,8 @@ namespace Service.Tests
                     Cidade = "São Paulo",
                     Bairro = "Itaquera",
                     Rua = "Pavilhão Nove",
-                    Numero = "12"
+                    Numero = "12",
+                    TipoPessoa = "prestador"
                 }
             };
             _context.AddRange(prestadores);
@@ -95,7 +93,8 @@ namespace Service.Tests
                 Cidade = "Fortaleza",
                 Bairro = "Invasão",
                 Rua = "Fiel Macabra",
-                Numero = "06"
+                Numero = "06",
+                TipoPessoa = "prestador"
             });
 
             //Assert
@@ -111,6 +110,7 @@ namespace Service.Tests
             Assert.AreEqual("Invasão", prestador.Bairro);
             Assert.AreEqual("Fiel Macabra", prestador.Rua);
             Assert.AreEqual("06", prestador.Numero);
+            Assert.AreEqual("prestador", prestador.TipoPessoa);
         }
 
         [TestMethod()]
@@ -157,6 +157,7 @@ namespace Service.Tests
             Assert.AreEqual("Marianga", prestador.Bairro);
             Assert.AreEqual("Gaviões da fiel", prestador.Rua);
             Assert.AreEqual("09", prestador.Numero);
+            Assert.AreEqual("prestador", prestador.TipoPessoa);
         }
 
         [TestMethod()]

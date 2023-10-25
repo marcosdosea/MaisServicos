@@ -49,7 +49,7 @@ namespace MaisServicosWeb.Models
         [Display(Name = "Número")]
         [StringLength(50, MinimumLength = 1, ErrorMessage = "Campo número inválido.")]
         [Required(ErrorMessage = "Este campo é obrigatório.")]
-        public string NumeroCasa { get; set; } = null!;
+        public string Numero { get; set; } = null!;
 
     }
 }

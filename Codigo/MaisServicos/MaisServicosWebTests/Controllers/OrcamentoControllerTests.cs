@@ -57,7 +57,7 @@ namespace MaisServicosWeb.Controllers.Tests
             ViewResult viewResult = (ViewResult)result;
             Assert.IsInstanceOfType(viewResult.ViewData.Model, typeof(OrcamentoViewModel));
             OrcamentoViewModel orcamentoView = (OrcamentoViewModel)viewResult.ViewData.Model;
-            Assert.AreEqual("10000", orcamentoView.Valor);
+            Assert.AreEqual(10000, orcamentoView.Valor);
             Assert.AreEqual("Durante a inspeção, foi identificado que a tomada estava defeituosa, sendo necessária a substituição da mesma", orcamentoView.Descricao);
         }
         [TestMethod()]
@@ -110,7 +110,7 @@ namespace MaisServicosWeb.Controllers.Tests
             ViewResult viewResult = (ViewResult)result;
             Assert.IsInstanceOfType(viewResult.ViewData.Model, typeof(OrcamentoViewModel));
             OrcamentoViewModel orcamentoView = (OrcamentoViewModel)viewResult.ViewData.Model;
-            Assert.AreEqual("10000", orcamentoView.Valor);
+            Assert.AreEqual(10000, orcamentoView.Valor);
             Assert.AreEqual("Durante a inspeção, foi identificado que a tomada estava defeituosa, sendo necessária a substituição da mesma", orcamentoView.Descricao);
         }
 
@@ -140,7 +140,7 @@ namespace MaisServicosWeb.Controllers.Tests
             ViewResult viewResult = (ViewResult)result;
             Assert.IsInstanceOfType(viewResult.ViewData.Model, typeof(OrcamentoViewModel));
             OrcamentoViewModel orcamentoView = (OrcamentoViewModel)viewResult.ViewData.Model;
-            Assert.AreEqual("10000", orcamentoView.Valor);
+            Assert.AreEqual(10000, orcamentoView.Valor);
             Assert.AreEqual("Durante a inspeção, foi identificado que a tomada estava defeituosa, sendo necessária a substituição da mesma", orcamentoView.Descricao);
         }
 
@@ -173,7 +173,7 @@ namespace MaisServicosWeb.Controllers.Tests
             {
                 Id = 1,
                 Valor = 10000,
-                Descricao = "Durante a inspeção, foi identificado que a tomada estava defeituosa, sendo necessária a subetituição da mesma",
+                Descricao = "Durante a inspeção, foi identificado que a tomada estava defeituosa, sendo necessária a substituição da mesma",
                 IdSolicita = 1
             };
         }

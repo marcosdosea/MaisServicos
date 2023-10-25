@@ -12,10 +12,10 @@ namespace MaisServicosWeb.Controllers
 {
     public class ServicoContratadoController : Controller
     {
-        private readonly IServicoContratado? _servicoContratado;
+        private readonly IServicoContratadoService? _servicoContratado;
         private readonly IMapper? _mapper;
 
-        public ServicoContratadoController (IServicoContratado servicoContratado, IMapper mapper)
+        public ServicoContratadoController (IServicoContratadoService servicoContratado, IMapper mapper)
         {
             _servicoContratado = servicoContratado;
             _mapper = mapper;

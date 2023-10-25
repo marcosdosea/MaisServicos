@@ -9,10 +9,10 @@ namespace MaisServicosWeb.Controllers
 {
     public class AreasDeAtuacaoController : Controller
     {
-        private readonly IAreaDeAtuacao _areaDeAtuacaoService;
+        private readonly IAreaDeAtuacaoService _areaDeAtuacaoService;
         private readonly IMapper _mapper;
 
-        public AreasDeAtuacaoController (IAreaDeAtuacao areaDeAtuacaoService, IMapper mapper)
+        public AreasDeAtuacaoController (IAreaDeAtuacaoService areaDeAtuacaoService, IMapper mapper)
         {
             _areaDeAtuacaoService = areaDeAtuacaoService;
             _mapper = mapper;

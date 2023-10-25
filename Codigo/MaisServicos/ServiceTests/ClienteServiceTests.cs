@@ -36,7 +36,8 @@ namespace Service.Tests
                     Cidade = "Itabaiana",
                     Bairro = "Marianga",
                     Rua = "Gaviões da fiel",
-                    Numero = "09"
+                    Numero = "09",
+                    TipoPessoa = "cliente"
                 },
                 new Pessoa
                 {
@@ -50,7 +51,8 @@ namespace Service.Tests
                     Cidade = "São Domingos",
                     Bairro = "Ponto Novo",
                     Rua = "Camisa 12",
-                    Numero = "08"
+                    Numero = "08",
+                    TipoPessoa = "cliente"
                 },
                 new Pessoa
                 {
@@ -64,7 +66,8 @@ namespace Service.Tests
                     Cidade = "São Paulo",
                     Bairro = "Itaquera",
                     Rua = "Pavilhão Nove",
-                    Numero = "12"
+                    Numero = "12",
+                    TipoPessoa = "cliente"
                 }
             };
             _context.AddRange(clientes);
@@ -89,7 +92,8 @@ namespace Service.Tests
                 Cidade = "Fortaleza",
                 Bairro = "Invasão",
                 Rua = "Fiel Macabra",
-                Numero = "06"
+                Numero = "06",
+                TipoPessoa = "cliente"
             });
 
             //Assert
@@ -105,6 +109,7 @@ namespace Service.Tests
             Assert.AreEqual("Invasão", client.Bairro);
             Assert.AreEqual("Fiel Macabra", client.Rua);
             Assert.AreEqual("06", client.Numero);
+            Assert.AreEqual("cliente", client.TipoPessoa);
         }
 
         [TestMethod()]
@@ -151,6 +156,7 @@ namespace Service.Tests
             Assert.AreEqual("Marianga", client.Bairro);
             Assert.AreEqual("Gaviões da fiel", client.Rua);
             Assert.AreEqual("09", client.Numero);
+            Assert.AreEqual("cliente", client.TipoPessoa);
         }
 
         [TestMethod()]
