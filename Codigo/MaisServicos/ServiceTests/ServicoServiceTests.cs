@@ -25,9 +25,27 @@ namespace Service.Tests
 
             var servicos = new List<Servico>
             {
-                new Servico { Id = 1, Nome = "Casa Nova Remodelada", Descricao = "Renovação completa ou parcial de residências para modernizar e melhorar o espaço.", IdAreaDeAtuacao = 1 },
-                new Servico { Id = 2, Nome = "Arte nas Paredes", Descricao = "Transformação de ambientes através de pintura e acabamentos estéticos.", IdAreaDeAtuacao = 2 },
-                new Servico { Id = 3, Nome = "AquaLux Piscinas", Descricao = "Construção profissional de piscinas, desde a escavação até o acabamento final.", IdAreaDeAtuacao = 3 }
+                new Servico 
+                { 
+                    Id = 1, 
+                    Nome = "Casa Nova Remodelada", 
+                    Descricao = "Renovação completa ou parcial de residências para modernizar e melhorar o espaço.", 
+                    IdAreaDeAtuacao = 1 
+                },
+                new Servico 
+                { 
+                    Id = 2, 
+                    Nome = "Arte nas Paredes", 
+                    Descricao = "Transformação de ambientes através de pintura e acabamentos estéticos.", 
+                    IdAreaDeAtuacao = 2 
+                },
+                new Servico 
+                { 
+                    Id = 3, 
+                    Nome = "AquaLux Piscinas", 
+                    Descricao = "Construção profissional de piscinas, desde a escavação até o acabamento final.", 
+                    IdAreaDeAtuacao = 3 
+                }
             };
 
             _context.AddRange(servicos);

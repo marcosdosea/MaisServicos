@@ -35,7 +35,7 @@ namespace Service.Tests
                 {
                 Id = 1,
                 Valor = 10000,
-                Descricao = "Durante a inspeção, foi identificado que a tomada estava defeituosa, sendo necessária a subetituição da mesma",
+                Descricao = "Durante a inspeção, foi identificado que a tomada estava defeituosa, sendo necessária a substituição da mesma",
                 IdSolicita = 1
                 },
                 new Orcamento
@@ -73,10 +73,10 @@ namespace Service.Tests
             //Assert
             Assert.AreEqual(4, _orcamentoService.GetAll().Count());
             var orcamento = _orcamentoService.Get(4);
-            Assert.AreEqual("4", orcamento.Id);
-            Assert.AreEqual("800", orcamento.Valor);
+            Assert.AreEqual(4, orcamento.Id);
+            Assert.AreEqual(800, orcamento.Valor);
             Assert.AreEqual("Rebocar parede", orcamento.Descricao);
-            Assert.AreEqual("4", orcamento.IdSolicita);
+            Assert.AreEqual(4, orcamento.IdSolicita);
         }
         [TestMethod()]
         public void DeleteTest()
@@ -108,8 +108,8 @@ namespace Service.Tests
         {
             var orcamento = _orcamentoService.Get(1);
             Assert.IsNotNull(orcamento);
-            Assert.AreEqual(5500, orcamento.Valor);
-            Assert.AreEqual("Reforma do piso do quarto", orcamento.Descricao);
+            Assert.AreEqual(10000, orcamento.Valor);
+            Assert.AreEqual("Durante a inspeção, foi identificado que a tomada estava defeituosa, sendo necessária a substituição da mesma", orcamento.Descricao);
         }
 
         [TestMethod()]
@@ -122,7 +122,7 @@ namespace Service.Tests
             Assert.IsNotNull(orcamentoClient);
             Assert.AreEqual(3, orcamentoClient.Count());
             Assert.AreEqual(1, orcamentoClient.First().Id);
-            Assert.AreEqual(5500, orcamentoClient.First().Valor);
+            Assert.AreEqual(10000, orcamentoClient.First().Valor);
         }
     }
 }
