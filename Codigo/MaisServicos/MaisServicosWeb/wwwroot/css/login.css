@@ -1,0 +1,55 @@
+
+
+.container {
+    height:100%;
+    align-content: center;
+    justify-content: center;
+}
+
+.input-group {
+    width: 150px;
+}
+
+.input-group-prepend span {
+    width: 50px;
+    background-color: #007BFF;
+    color: white;
+    border: 0 !important;
+}
+
+input:focus {
+    outline: 0 0 0 0 !important;
+    box-shadow: 0 0 0 0 !important;
+}
+
+
+.lost_Password {
+    z-index: 1;
+    position: relative;
+    left: 250px;
+    top: 45px;
+}
+
+.input_remember {
+    z-index: 1;
+    position: relative;
+    left: 20px;
+}
+
+.input_box{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-content:center;
+    align-items:center;
+    margin-top: 10%;
+   
+}
+
+.box_forgotP {
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 10%;
+    width:1000px
+}

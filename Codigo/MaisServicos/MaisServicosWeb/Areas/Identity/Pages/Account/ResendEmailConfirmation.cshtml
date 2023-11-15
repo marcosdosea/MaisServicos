@@ -1,23 +1,41 @@
 ﻿@page
 @model ResendEmailConfirmationModel
 @{
-    ViewData["Title"] = "Resend email confirmation";
+    ViewData["Title"] = "Reenviar e-mail de confirmação";
 }
 
-<h1>@ViewData["Title"]</h1>
-<h2>Enter your email.</h2>
-<hr />
-<div class="row">
+
+<link rel="stylesheet" href="~/css/login.css" asp-append-version="true" />
+
+<div class="container row" style="margin-top:5%">
     <div class="col-md-4">
-        <form method="post">
-            <div asp-validation-summary="All" class="text-danger"></div>
-            <div class="form-floating">
-                <input asp-for="Input.Email" class="form-control" aria-required="true" />
-                <label asp-for="Input.Email" class="form-label"></label>
-                <span asp-validation-for="Input.Email" class="text-danger"></span>
+        <div class="d-flex justify-content-center h-100 box_forgotP">
+            <div>
+                <h1>@ViewData["Title"]</h1>
             </div>
-            <button type="submit" class="w-100 btn btn-lg btn-primary">Resend</button>
-        </form>
+            <h2>Digite seu e-mail</h2>
+            <hr />
+            <div class="row">
+                <div style="width:400px">
+                    <div class="col-md-4">
+                        <form method="post">
+                            <div asp-validation-summary="All" class="text-danger"></div>
+                            <div class="" style="width:400px">
+                                <label asp-for="Input.Email" class="form-label"></label>
+                                <div class="form-group">
+                                    <input asp-for="Input.Email" class="form-control" aria-required="true" />
+                                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+                                </div>
+
+                                <div style="margin-top:5%">
+                                    <button type="submit" class="w-100 btn btn-lg btn-primary">Reenviar</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
